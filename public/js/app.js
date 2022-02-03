@@ -1,5 +1,3 @@
-console.log('Client Side JS File is Loaded')
-
 /* Fetch data from the URL, then execute the below response */
 fetch('http://localhost:3000/weather?address=boston').then((response) => {
     // Run this function when the JSON data has been fetched
