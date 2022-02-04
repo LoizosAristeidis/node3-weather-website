@@ -7,10 +7,10 @@ const forecast = (lat, long, callback) => {
         if (error) {
             callback('Unable to connect to location services!', undefined)  // Use undefined because the callback accepts (error, data), and we don't have any data
         } else if (body.error) {
-            callback('Unable to find location. Try using another set of coordinates.', undefined)
+            callback('Unable to find location. Try searching again.', undefined)
         } else {
             callback(undefined, body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + 
-            ' degrees out. It feels like ' + body.current.feelslike + ' degrees out. The humidity is ' + body.current.humidity + ' %.')
+            ' degrees out. It feels like ' + body.current.feelslike + ' degrees out. The humidity is ' + body.current.humidity + '%.')
         }
     })
 }
