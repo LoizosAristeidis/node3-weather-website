@@ -1,15 +1,15 @@
 /* Fetch data from the URL, then execute the below response */
-fetch('http://localhost:3000/weather?address=boston').then((response) => {
-    // Run this function when the JSON data has been fetched
-    response.json().then((data) => {
-        if (data.error) {
-            console.log(data.error)
-        } else {
-            console.log(data.location)
-            console.log(data.forecast)
-        }
-    })
-})
+// fetch('/weather?address=boston').then((response) => {
+    /* Run this function when the JSON data has been fetched */
+//     response.json().then((data) => {
+//         if (data.error) {
+//             console.log(data.error)
+//         } else {
+//             console.log(data.location)
+//             console.log(data.forecast)
+//         }
+//     })
+// })
 
 /* Select the Form and its elements on the index.hbs file */
 const weatherForm = document.querySelector('form')
@@ -23,7 +23,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
     /* Fetch data from the URL, then execute the below response */
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
         // Run this function when the JSON data has been fetched
         response.json().then((data) => {
             if (data.error) {

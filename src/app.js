@@ -9,6 +9,9 @@ const forecast = require ('./utils/forecast')
 /* Initialize the Express framework */
 const app = express()
 
+/* The port for Heroku Deployment, or 3000 if the app is ran locally */
+const port = process.env.PORT || 3000
+
 /* Set up the handlebars template engine for html files */
 app.set('view engine', 'hbs')
 
@@ -115,6 +118,6 @@ app.get('*', (req, res) => {
 
 /* Starts up the Server on the given port */
 /* Access the server locally using localhost:3000 as the URL */
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port + '.')
 })
